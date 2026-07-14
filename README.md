@@ -1,27 +1,29 @@
-# Cross-border E-commerce Operations Toolkit
+# Cross-border AI Operations Toolkit
 
-Public portfolio site for AdventureX application materials.
+This is a public browser-based tool site for AdventureX application materials.
 
-This project showcases a set of AI-assisted workflow tools for cross-border e-commerce operations:
+## What is included
 
-- Amazon Listing Helper
-- GoodCang Product Builder
-- Walmart WFS Discrepancy Processor
-- Cross-border Operations Workbench
+- AI Workbench dashboard
+- GoodCang Product Builder CSV preview tool
+- Walmart WFS Discrepancy Processor CSV tool
+- Amazon Listing Helper copy-ready field tool
+
+The tools run in the browser with JavaScript. No backend server is required.
 
 ## Privacy
 
-This public version intentionally excludes company data, real store information, private SOP screenshots, credentials, customer files, and internal spreadsheets.
+This public version does not include company spreadsheets, real store names, credentials, internal SOP screenshots, private customer files, or account automation flows.
+
+Users can paste or import their own CSV-style data for public-safe testing. Data is processed locally in the browser.
 
 ## GitHub Pages
 
-After uploading these files to a public GitHub repository, enable GitHub Pages:
+Upload these files to the root of the repository:
 
-1. Open repository `Settings`
-2. Go to `Pages`
-3. Source: `Deploy from a branch`
-4. Branch: `main`
-5. Folder: `/ root`
-6. Save
+- `index.html`
+- `styles.css`
+- `app.js`
+- `README.md`
 
-The site entry file is `index.html`.
+Then enable GitHub Pages from `Settings` -> `Pages` -> `Deploy from a branch` -> `main` -> `/ root`.

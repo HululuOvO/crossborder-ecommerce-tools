@@ -1,258 +1,272 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cross-border E-commerce Operations Toolkit</title>
-  <meta name="description" content="A public portfolio of AI-assisted tools for cross-border e-commerce operations." />
+  <title>Cross-border AI Operations Toolkit</title>
+  <meta name="description" content="Public browser-based tools for cross-border e-commerce operations." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#home" aria-label="Cross-border toolkit home">
-      <span class="brand-mark">CB</span>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Home">
+      <span class="brand-icon">AI</span>
       <span>
-        <strong>Cross-border Toolkit</strong>
-        <small>AI-assisted operations tools</small>
+        <strong>Cross-border AI Toolkit</strong>
+        <small>Public browser tools</small>
       </span>
     </a>
     <nav>
       <a href="#demo">Demo</a>
       <a href="#tools">Tools</a>
-      <a href="#workflow">Workflow</a>
-      <a href="#impact">Impact</a>
+      <a href="#process">Process</a>
       <a href="#privacy">Privacy</a>
     </nav>
   </header>
 
-  <main id="home">
+  <main id="top">
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">AdventureX portfolio project</p>
-        <h1>Cross-border E-commerce Operations Toolkit</h1>
+        <p class="eyebrow">Public web app for AdventureX</p>
+        <h1>Browser tools for cross-border e-commerce operators</h1>
         <p class="lead">
-          A public showcase of AI-assisted tools built to reduce repetitive operational work across
-          product listing, warehouse template preparation, shipment discrepancy processing, and SOP-based workflows.
+          A privacy-safe website where people can try practical tools for Amazon listing preparation,
+          warehouse product fields, Walmart WFS spreadsheet review, and SOP-centered operations.
         </p>
         <div class="hero-actions">
-          <a class="button primary" href="#demo">Try live demo</a>
-          <a class="button secondary" href="#tools">View tools</a>
-          <a class="button secondary" href="project-overview.md">Read project notes</a>
+          <a class="btn primary" href="#demo">Use the tools</a>
+          <a class="btn ghost" href="#tools">See tool suite</a>
         </div>
       </div>
-      <div class="hero-visual" aria-label="Toolkit workflow diagram">
-        <div class="orbit-card one">Product data</div>
-        <div class="orbit-card two">AI rules</div>
-        <div class="orbit-card three">Excel output</div>
-        <div class="console">
-          <div class="console-bar"><span></span><span></span><span></span></div>
-          <p>Upload source files</p>
-          <p>Validate fields</p>
-          <p>Generate clean output</p>
+
+      <div class="workbench-preview" aria-label="Dashboard preview">
+        <div class="preview-sidebar">
+          <div class="mini-logo">AI</div>
+          <span class="side-active">Dashboard</span>
+          <span>Amazon</span>
+          <span>Walmart</span>
+          <span>Warehouse</span>
+          <span>SOP Library</span>
+        </div>
+        <div class="preview-main">
+          <div class="preview-search">Search SKU / MSKU / Shipment ID / SOP</div>
+          <div class="preview-hero">
+            <div>
+              <small>Dashboard</small>
+              <strong>Operations Workbench</strong>
+              <p>Listing, shipment, warehouse, and SOP workflows in one place.</p>
+            </div>
+            <b>AI</b>
+          </div>
+          <div class="preview-stats">
+            <span><strong>12</strong>Tasks</span>
+            <span><strong>5</strong>Reviews</span>
+            <span><strong>8</strong>SOPs</span>
+          </div>
+          <div class="preview-cards">
+            <span>Amazon Listing</span>
+            <span>WFS Review</span>
+            <span>GoodCang Builder</span>
+            <span>Unit Conversion</span>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="demo" class="section demo-section">
-      <div class="section-heading">
-        <p class="eyebrow">Interactive demo</p>
-        <h2>Try the workflow in your browser</h2>
+      <div class="section-title">
+        <p class="eyebrow">Usable web tools</p>
+        <h2>Use the tools directly in your browser</h2>
         <p>
-          This public demo uses safe sample data only. It shows the core logic and review flow without exposing
-          company spreadsheets, store accounts, or private SOP files.
+          This public version runs entirely in the browser. Users can paste or import CSV-style data,
+          generate review tables, download outputs, and copy listing fields. Data stays on the device.
         </p>
       </div>
 
-      <div class="demo-shell">
-        <div class="demo-tabs" role="tablist" aria-label="Tool demos">
-          <button class="demo-tab active" data-demo-tab="goodcang" type="button">GoodCang Builder</button>
-          <button class="demo-tab" data-demo-tab="walmart" type="button">Walmart Discrepancy</button>
-          <button class="demo-tab" data-demo-tab="amazon" type="button">Amazon Helper</button>
-        </div>
+      <div class="demo-app">
+        <aside class="demo-nav" aria-label="Demo modules">
+          <button class="nav-item active" data-panel="workbench" type="button"><span>DB</span>AI Workbench</button>
+          <button class="nav-item" data-panel="goodcang" type="button"><span>GC</span>GoodCang Builder</button>
+          <button class="nav-item" data-panel="walmart" type="button"><span>WM</span>Walmart Review</button>
+          <button class="nav-item" data-panel="amazon" type="button"><span>AM</span>Amazon Helper</button>
+        </aside>
 
-        <article class="demo-panel active" id="demo-goodcang">
-          <div class="demo-copy">
-            <h3>GoodCang Product Builder</h3>
-            <p>Fill a sample product card, then generate a warehouse upload preview and review notes.</p>
-          </div>
-          <div class="form-grid">
-            <label>SKU <input id="gc-sku" value="KTHMJJ900-5-BL-16in" /></label>
-            <label>Chinese declaration name <input id="gc-cn" value="毛巾架" /></label>
-            <label>Material <input id="gc-material" value="Metal" /></label>
-            <label>Product URL <input id="gc-url" value="https://example.com/product/towel-rack" /></label>
-            <label>Export price USD <input id="gc-export" value="6.89" /></label>
-            <label>Import price USD <input id="gc-import" value="6.89" /></label>
-          </div>
-          <button class="button primary demo-run" type="button" data-run-demo="goodcang">Generate preview</button>
-          <div class="demo-output" id="goodcang-output"></div>
-        </article>
+        <div class="demo-content">
+          <section class="panel active" id="panel-workbench">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Dashboard</p>
+                <h3>Cross-border AI Workbench</h3>
+                <p>A public-safe workspace showing how the tools are organized for daily operations.</p>
+              </div>
+              <input id="module-search" value="" placeholder="Search modules, e.g. Amazon or SOP" />
+            </div>
+            <div class="local-note">
+              Public privacy mode: this site does not connect to company accounts or upload your files to a server.
+              The interactive tools run in your browser.
+            </div>
+            <div class="stat-row">
+              <div><strong>12</strong><span>Tasks today</span></div>
+              <div><strong>5</strong><span>Shipment reviews</span></div>
+              <div><strong>8</strong><span>SOP checks</span></div>
+              <div><strong>3</strong><span>Priority alerts</span></div>
+            </div>
+            <div class="module-grid" id="module-grid"></div>
+            <div class="result-card" id="module-detail">
+              Select a module to see what the public demo would open.
+            </div>
+          </section>
 
-        <article class="demo-panel" id="demo-walmart">
-          <div class="demo-copy">
-            <h3>Walmart WFS Discrepancy Processor</h3>
-            <p>Match sample shipment reports with a discrepancy sheet, update received units, and separate rows that no longer need investigation.</p>
-          </div>
-          <div class="split-inputs">
-            <label>
-              Monthly shipment report
-              <textarea id="wm-monthly">Shipment ID,Received Units
+          <section class="panel" id="panel-goodcang">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Warehouse upload</p>
+                <h3>GoodCang Product Builder</h3>
+                <p>Generate a safe preview of warehouse bulk-upload fields.</p>
+              </div>
+            </div>
+            <div class="form-grid">
+              <label>SKU <input id="gc-sku" value="KTHMJJ900-5-BL-16in" /></label>
+              <label>Chinese declaration name <input id="gc-cn" value="毛巾架" /></label>
+              <label>Material <input id="gc-material" value="Metal" /></label>
+              <label>Product URL <input id="gc-url" value="https://example.com/product/towel-rack" /></label>
+              <label>Export price USD <input id="gc-export" value="6.89" /></label>
+              <label>Import price USD <input id="gc-import" value="6.89" /></label>
+            </div>
+            <div class="action-row">
+              <button class="btn primary" data-action="goodcang" type="button">Generate preview</button>
+              <button class="btn ghost" data-download="goodcang" type="button">Download demo CSV</button>
+            </div>
+            <div class="result-card" id="goodcang-result"></div>
+          </section>
+
+          <section class="panel" id="panel-walmart">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Spreadsheet review</p>
+                <h3>Walmart WFS Discrepancy Processor</h3>
+                <p>Match shipment reports, update received units, and separate resolved rows.</p>
+              </div>
+            </div>
+            <div class="import-row">
+              <label>Import monthly report CSV
+                <input id="wm-monthly-file" type="file" accept=".csv,.txt" />
+              </label>
+              <label>Import discrepancy sheet CSV
+                <input id="wm-case-file" type="file" accept=".csv,.txt" />
+              </label>
+            </div>
+            <div class="textarea-grid">
+              <label>
+                Monthly shipment report
+                <textarea id="wm-monthly">Shipment ID,Received Units
 7227377WFA,12
 7189537WFA,8
 7000001WFA,5</textarea>
-            </label>
-            <label>
-              Discrepancy sheet
-              <textarea id="wm-case">Store,Shipment ID,Inbound Order ID,Declared Units
+              </label>
+              <label>
+                Discrepancy sheet
+                <textarea id="wm-case">Store,Shipment ID,Inbound Order ID,Declared Units
 Hotor,7227377WFA,IO-1001,15
 VacLife,7189537WFA,IO-1002,8
 Powools,7000001WFA,IO-1003,3</textarea>
+              </label>
+            </div>
+            <div class="action-row">
+              <button class="btn primary" data-action="walmart" type="button">Process sample data</button>
+              <button class="btn ghost" data-download="walmart" type="button">Download review CSV</button>
+              <button class="btn ghost" data-reset="walmart" type="button">Restore sample data</button>
+            </div>
+            <div class="result-card" id="walmart-result"></div>
+          </section>
+
+          <section class="panel" id="panel-amazon">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Listing fields</p>
+                <h3>Amazon Listing Helper</h3>
+                <p>Build copy-ready listing fields and demonstrate unit conversion.</p>
+              </div>
+            </div>
+            <div class="form-grid">
+              <label>Brand <input id="az-brand" value="Kitsure" /></label>
+              <label>Product type <input id="az-type" value="Cutting Board" /></label>
+              <label>SKU <input id="az-sku" value="US494-2T" /></label>
+              <label>Length mm <input id="az-length" value="397" /></label>
+              <label>Width mm <input id="az-width" value="125" /></label>
+              <label>Height mm <input id="az-height" value="303" /></label>
+              <label>Weight g <input id="az-weight" value="11700" /></label>
+              <label>Color <input id="az-color" value="Black" /></label>
+            </div>
+            <label class="wide-label">
+              Product description
+              <textarea id="az-description">A practical kitchen storage and preparation accessory designed for everyday home organization.</textarea>
             </label>
-          </div>
-          <button class="button primary demo-run" type="button" data-run-demo="walmart">Process sample sheet</button>
-          <div class="demo-output" id="walmart-output"></div>
-        </article>
-
-        <article class="demo-panel" id="demo-amazon">
-          <div class="demo-copy">
-            <h3>Amazon Listing Helper</h3>
-            <p>Convert product facts into reviewable Seller Central fields, including unit conversion and copy-ready listing content.</p>
-          </div>
-          <div class="form-grid">
-            <label>Brand <input id="az-brand" value="Kitsure" /></label>
-            <label>Product type <input id="az-type" value="Cutting Board" /></label>
-            <label>SKU <input id="az-sku" value="US494-2T" /></label>
-            <label>Length mm <input id="az-length" value="397" /></label>
-            <label>Width mm <input id="az-width" value="125" /></label>
-            <label>Height mm <input id="az-height" value="303" /></label>
-            <label>Weight g <input id="az-weight" value="11700" /></label>
-            <label>Color <input id="az-color" value="Black" /></label>
-          </div>
-          <label class="wide-label">Product description
-            <textarea id="az-description">A practical kitchen storage and preparation accessory designed for everyday home organization.</textarea>
-          </label>
-          <button class="button primary demo-run" type="button" data-run-demo="amazon">Build listing fields</button>
-          <div class="demo-output" id="amazon-output"></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section intro">
-      <div>
-        <h2>Why this project exists</h2>
-        <p>
-          Cross-border e-commerce operators often repeat the same spreadsheet and platform tasks:
-          preparing product fields, checking shipment quantities, translating SOPs into rules, and validating outputs.
-          This toolkit turns those steps into structured workflows that are easier to review, reuse, and improve.
-        </p>
-      </div>
-      <div class="metrics">
-        <div><strong>4</strong><span>public tool concepts</span></div>
-        <div><strong>Excel-first</strong><span>designed for operator workflows</span></div>
-        <div><strong>Privacy-aware</strong><span>no company data included</span></div>
+            <div class="action-row">
+              <button class="btn primary" data-action="amazon" type="button">Build listing fields</button>
+              <button class="btn ghost" data-copy="amazon" type="button">Copy generated fields</button>
+            </div>
+            <div class="result-card" id="amazon-result"></div>
+          </section>
+        </div>
       </div>
     </section>
 
     <section id="tools" class="section">
-      <div class="section-heading">
+      <div class="section-title">
         <p class="eyebrow">Tool suite</p>
-        <h2>Public tools shown in this portfolio</h2>
+        <h2>What this portfolio demonstrates</h2>
       </div>
-
       <div class="tool-grid">
-        <article class="tool-card">
-          <div class="tool-icon amazon">A</div>
-          <h3>Amazon Listing Helper</h3>
-          <p>
-            Helps organize multi-site listing fields, unit conversions, title rules, manual descriptions,
-            bullet points, colors, fulfillment options, and review-ready output.
-          </p>
-          <a href="amazon-listing-helper.md">Details</a>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-icon goodcang">G</div>
-          <h3>GoodCang Product Builder</h3>
-          <p>
-            Converts product source information into a warehouse bulk-upload template, with field mapping,
-            deduplication, manual overrides, and an output review checklist.
-          </p>
-          <a href="goodcang-product-builder.md">Details</a>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-icon walmart">W</div>
-          <h3>Walmart WFS Discrepancy Processor</h3>
-          <p>
-            Matches monthly shipment reports with discrepancy investigation sheets, updates received units,
-            calculates differences, and creates a clean review sheet.
-          </p>
-          <a href="walmart-discrepancy-processor.md">Details</a>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-icon workbench">AI</div>
-          <h3>Operations Workbench</h3>
-          <p>
-            A unified concept workspace for SOP browsing, product data preparation, marketplace helpers,
-            translation, unit conversion, and operator task flows.
-          </p>
-          <a href="operations-workbench.md">Details</a>
-        </article>
-      </div>
-    </section>
-
-    <section id="workflow" class="section workflow">
-      <div class="section-heading">
-        <p class="eyebrow">Workflow design</p>
-        <h2>How the tools work</h2>
-      </div>
-      <div class="timeline">
-        <div>
+        <article>
           <span>01</span>
-          <h3>Upload source data</h3>
-          <p>Operators provide a product sheet, template, or shipment report using a browser-based local tool.</p>
-        </div>
-        <div>
+          <h3>Workflow understanding</h3>
+          <p>Tools are based on real operator workflows, then converted into privacy-safe public demos.</p>
+        </article>
+        <article>
           <span>02</span>
-          <h3>Apply SOP rules</h3>
-          <p>The tool applies field mapping, unit conversion, validation checks, and manual confirmation points.</p>
-        </div>
-        <div>
+          <h3>Spreadsheet automation</h3>
+          <p>Core logic focuses on field mapping, unit conversion, matching, validation, and reviewable outputs.</p>
+        </article>
+        <article>
           <span>03</span>
-          <h3>Generate reviewable output</h3>
-          <p>Outputs are Excel-first, with logs and review sheets so people can verify before platform upload.</p>
-        </div>
+          <h3>Human-in-the-loop design</h3>
+          <p>The tools do not hide important decisions. They flag fields that need manual checking.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Public-safe packaging</h3>
+          <p>Private company data, store names, credentials, and internal SOP details are intentionally excluded.</p>
+        </article>
       </div>
     </section>
 
-    <section id="impact" class="section impact">
-      <div class="section-heading">
-        <p class="eyebrow">What it demonstrates</p>
-        <h2>Skills represented</h2>
+    <section id="process" class="section process">
+      <div>
+        <p class="eyebrow">Design process</p>
+        <h2>From SOP to tool</h2>
       </div>
-      <div class="impact-list">
-        <p>Workflow analysis from SOPs and real operator pain points</p>
-        <p>Spreadsheet automation and validation with Python</p>
-        <p>Local web UI design for non-technical users</p>
-        <p>Privacy-aware public project packaging</p>
-        <p>Iterative product improvement from user feedback</p>
+      <div class="process-grid">
+        <div><strong>1</strong><span>Read operator SOPs and identify repeated steps.</span></div>
+        <div><strong>2</strong><span>Translate rules into spreadsheet logic and review checks.</span></div>
+        <div><strong>3</strong><span>Design local browser tools for non-technical users.</span></div>
+        <div><strong>4</strong><span>Build public demos that preserve the workflow without exposing private data.</span></div>
       </div>
     </section>
 
     <section id="privacy" class="section privacy">
-      <h2>Public data policy</h2>
+      <h2>Privacy-first public web app</h2>
       <p>
-        This portfolio intentionally excludes company data, real store credentials, internal spreadsheets,
-        customer information, private SOP screenshots, and automation flows that depend on logged-in accounts.
-        The site is a public presentation of the product thinking, workflow design, and tool architecture.
+        This site is a public web app. It does not include company spreadsheets, private SOP screenshots,
+        real store names, real customer files, credentials, account automation, or internal operational data.
+        The current tools run in the browser, so pasted or imported CSV content is processed locally.
       </p>
     </section>
   </main>
 
   <footer>
-    <p>Cross-border E-commerce Operations Toolkit 路 Public portfolio version</p>
+    <p>Cross-border AI Operations Toolkit · Public browser-based tools</p>
   </footer>
   <script src="app.js"></script>
 </body>
 </html>
-
