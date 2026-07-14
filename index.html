@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -17,6 +17,7 @@
       </span>
     </a>
     <nav>
+      <a href="#demo">Demo</a>
       <a href="#tools">Tools</a>
       <a href="#workflow">Workflow</a>
       <a href="#impact">Impact</a>
@@ -34,8 +35,9 @@
           product listing, warehouse template preparation, shipment discrepancy processing, and SOP-based workflows.
         </p>
         <div class="hero-actions">
-          <a class="button primary" href="#tools">View tools</a>
-          <a class="button secondary" href="docs/project-overview.md">Read project notes</a>
+          <a class="button primary" href="#demo">Try live demo</a>
+          <a class="button secondary" href="#tools">View tools</a>
+          <a class="button secondary" href="project-overview.md">Read project notes</a>
         </div>
       </div>
       <div class="hero-visual" aria-label="Toolkit workflow diagram">
@@ -48,6 +50,89 @@
           <p>Validate fields</p>
           <p>Generate clean output</p>
         </div>
+      </div>
+    </section>
+
+    <section id="demo" class="section demo-section">
+      <div class="section-heading">
+        <p class="eyebrow">Interactive demo</p>
+        <h2>Try the workflow in your browser</h2>
+        <p>
+          This public demo uses safe sample data only. It shows the core logic and review flow without exposing
+          company spreadsheets, store accounts, or private SOP files.
+        </p>
+      </div>
+
+      <div class="demo-shell">
+        <div class="demo-tabs" role="tablist" aria-label="Tool demos">
+          <button class="demo-tab active" data-demo-tab="goodcang" type="button">GoodCang Builder</button>
+          <button class="demo-tab" data-demo-tab="walmart" type="button">Walmart Discrepancy</button>
+          <button class="demo-tab" data-demo-tab="amazon" type="button">Amazon Helper</button>
+        </div>
+
+        <article class="demo-panel active" id="demo-goodcang">
+          <div class="demo-copy">
+            <h3>GoodCang Product Builder</h3>
+            <p>Fill a sample product card, then generate a warehouse upload preview and review notes.</p>
+          </div>
+          <div class="form-grid">
+            <label>SKU <input id="gc-sku" value="KTHMJJ900-5-BL-16in" /></label>
+            <label>Chinese declaration name <input id="gc-cn" value="毛巾架" /></label>
+            <label>Material <input id="gc-material" value="Metal" /></label>
+            <label>Product URL <input id="gc-url" value="https://example.com/product/towel-rack" /></label>
+            <label>Export price USD <input id="gc-export" value="6.89" /></label>
+            <label>Import price USD <input id="gc-import" value="6.89" /></label>
+          </div>
+          <button class="button primary demo-run" type="button" data-run-demo="goodcang">Generate preview</button>
+          <div class="demo-output" id="goodcang-output"></div>
+        </article>
+
+        <article class="demo-panel" id="demo-walmart">
+          <div class="demo-copy">
+            <h3>Walmart WFS Discrepancy Processor</h3>
+            <p>Match sample shipment reports with a discrepancy sheet, update received units, and separate rows that no longer need investigation.</p>
+          </div>
+          <div class="split-inputs">
+            <label>
+              Monthly shipment report
+              <textarea id="wm-monthly">Shipment ID,Received Units
+7227377WFA,12
+7189537WFA,8
+7000001WFA,5</textarea>
+            </label>
+            <label>
+              Discrepancy sheet
+              <textarea id="wm-case">Store,Shipment ID,Inbound Order ID,Declared Units
+Hotor,7227377WFA,IO-1001,15
+VacLife,7189537WFA,IO-1002,8
+Powools,7000001WFA,IO-1003,3</textarea>
+            </label>
+          </div>
+          <button class="button primary demo-run" type="button" data-run-demo="walmart">Process sample sheet</button>
+          <div class="demo-output" id="walmart-output"></div>
+        </article>
+
+        <article class="demo-panel" id="demo-amazon">
+          <div class="demo-copy">
+            <h3>Amazon Listing Helper</h3>
+            <p>Convert product facts into reviewable Seller Central fields, including unit conversion and copy-ready listing content.</p>
+          </div>
+          <div class="form-grid">
+            <label>Brand <input id="az-brand" value="Kitsure" /></label>
+            <label>Product type <input id="az-type" value="Cutting Board" /></label>
+            <label>SKU <input id="az-sku" value="US494-2T" /></label>
+            <label>Length mm <input id="az-length" value="397" /></label>
+            <label>Width mm <input id="az-width" value="125" /></label>
+            <label>Height mm <input id="az-height" value="303" /></label>
+            <label>Weight g <input id="az-weight" value="11700" /></label>
+            <label>Color <input id="az-color" value="Black" /></label>
+          </div>
+          <label class="wide-label">Product description
+            <textarea id="az-description">A practical kitchen storage and preparation accessory designed for everyday home organization.</textarea>
+          </label>
+          <button class="button primary demo-run" type="button" data-run-demo="amazon">Build listing fields</button>
+          <div class="demo-output" id="amazon-output"></div>
+        </article>
       </div>
     </section>
 
@@ -81,7 +166,7 @@
             Helps organize multi-site listing fields, unit conversions, title rules, manual descriptions,
             bullet points, colors, fulfillment options, and review-ready output.
           </p>
-          <a href="docs/amazon-listing-helper.md">Details</a>
+          <a href="amazon-listing-helper.md">Details</a>
         </article>
 
         <article class="tool-card">
@@ -91,7 +176,7 @@
             Converts product source information into a warehouse bulk-upload template, with field mapping,
             deduplication, manual overrides, and an output review checklist.
           </p>
-          <a href="docs/goodcang-product-builder.md">Details</a>
+          <a href="goodcang-product-builder.md">Details</a>
         </article>
 
         <article class="tool-card">
@@ -101,7 +186,7 @@
             Matches monthly shipment reports with discrepancy investigation sheets, updates received units,
             calculates differences, and creates a clean review sheet.
           </p>
-          <a href="docs/walmart-discrepancy-processor.md">Details</a>
+          <a href="walmart-discrepancy-processor.md">Details</a>
         </article>
 
         <article class="tool-card">
@@ -111,7 +196,7 @@
             A unified concept workspace for SOP browsing, product data preparation, marketplace helpers,
             translation, unit conversion, and operator task flows.
           </p>
-          <a href="docs/operations-workbench.md">Details</a>
+          <a href="operations-workbench.md">Details</a>
         </article>
       </div>
     </section>
@@ -165,7 +250,9 @@
   </main>
 
   <footer>
-    <p>Cross-border E-commerce Operations Toolkit · Public portfolio version</p>
+    <p>Cross-border E-commerce Operations Toolkit 路 Public portfolio version</p>
   </footer>
+  <script src="app.js"></script>
 </body>
 </html>
+
